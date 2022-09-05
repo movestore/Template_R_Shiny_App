@@ -1,8 +1,8 @@
-# Name of App *(give the App a name, please stick to our convention of Title Case without hyphens (e.g. My New App))*
+# Name of App *(Give your app a short and informative title. Please adhere to our convention of Title Case without hyphens (e.g. My New App))*
 
 MoveApps
 
-Github repository: *github.com/movestore/Name-of-App* *(the link to the repository where the code of the app can be found must be provided)*
+Github repository: *github.com/yourAccount/Name-of-App* *(the link to the repository where the code of the app can be found must be provided)*
 
 ## Description
 *Enter here the short description of the App that might also be used when filling out the description when submitting the App to Moveapps. This text is directly presented to Users that look through the list of Apps when compiling Workflows.*
