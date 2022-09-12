@@ -1,5 +1,6 @@
 library("jsonlite")
 source("logger.R")
+source("app-files.R")
 source("ShinyModule.R")
 
 Sys.setenv(tz="UTC")
