@@ -1,7 +1,7 @@
 #' Provides the path to app-files. App-files are files that
 #' - are needed by the app to work during run time
 #' - gets uploaded by the user of this app during configuration time
-#' - must not exist during runtime (eg the user did not upload anything)
+#' - there will be no warning if the requested file-set is not available (eg the user did not upload anything and the app developer did not provide any fallback)
 #' - can also be provided by the app developer and gets bundled into the app during build time (the fallback)
 #' 
 #' @param appSpecLocalFileSettingId The ID of the requested set of app-files (see counterpart in `appspec.json` (setting[type=LOCAL_FILE].id))
