@@ -5,9 +5,6 @@ inputFileName = "./data/raw/input1_pigeons.rds"
 ## optionally change the output file name
 outputFileName = "./data/output/output.rds" 
 
-# enable better error reporting during development
-options(error = function() traceback(3))
-
 #################################################################
 ########################### Arguments ###########################
 # The data parameter will be added automatically if input data is available
