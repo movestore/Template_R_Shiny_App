@@ -1,4 +1,4 @@
-## one can use the function: logger.fatal(), logger.error(), logger.warn(), logger.info(), logger.debug(), logger.trace(), to display messages to the user in the log file of the App in MoveApps ##
+##### LOGGER
 
 FATAL <- 1L
 names(FATAL) <- "FATAL"
@@ -47,11 +47,11 @@ logger.warn <- function(msg, ...) {
 }
 
 logger.error <- function(msg, ...) {
-  logger.log_level(msg, ..., level=ERROR)
+  logger.log_level(msg, ..., level = ERROR)
 }
 
 logger.fatal <- function(msg, ...) {
-  logger.log_level(msg, ..., level=FATAL)
+  logger.log_level(msg, ..., level = FATAL)
 }
 
-logger.threshold = TRACE
+logger.threshold = Sys.getenv(x = "LOG_LEVEL_SDK", TRACE)

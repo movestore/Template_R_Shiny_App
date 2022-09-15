@@ -25,3 +25,12 @@ getAppFilePath <- function(appSpecLocalFileSettingId, fallbackToProvidedFiles=TR
         }
     }
 }
+
+#' Provides the path to an app-artifact.
+#' You can write the app generated file to this path and it will become available on MoveApps after each app run.
+#' @param artifactName The name of the artifact
+#' @return Path for the artifact. Use it to write your data
+#'
+appArtifactPath <- function(artifactName) {
+    return(paste0(Sys.getenv(x = "APP_ARTIFACTS_DIR", "/tmp/"), artifactName))
+}
