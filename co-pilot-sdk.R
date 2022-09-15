@@ -34,4 +34,5 @@ Sys.setenv(
 )
 
 # simulate running your app on MoveApps
+source("src/moveapps.R")
 simulateMoveAppsRun(args)
