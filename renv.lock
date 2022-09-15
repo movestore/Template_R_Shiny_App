@@ -1,6 +1,6 @@
 {
   "R": {
-    "Version": "4.1.2",
+    "Version": "4.2.1",
     "Repositories": [
       {
         "Name": "CRAN",
@@ -24,16 +24,6 @@
       "Repository": "RSPM",
       "Hash": "dab19adae4440ae55aa8a9d238b246bb",
       "Requirements": []
-    },
-    "askpass": {
-      "Package": "askpass",
-      "Version": "1.1",
-      "Source": "Repository",
-      "Repository": "RSPM",
-      "Hash": "e8a22846fff485f0be3770c2da758713",
-      "Requirements": [
-        "sys"
-      ]
     },
     "base64enc": {
       "Package": "base64enc",
@@ -82,14 +72,6 @@
       "Source": "Repository",
       "Repository": "RSPM",
       "Hash": "0a6a65d92bd45b47b94b84244b528d17",
-      "Requirements": []
-    },
-    "curl": {
-      "Package": "curl",
-      "Version": "4.3.2",
-      "Source": "Repository",
-      "Repository": "RSPM",
-      "Hash": "022c42d49c28e95d69ca60446dbabf88",
       "Requirements": []
     },
     "digest": {
@@ -171,20 +153,6 @@
         "promises"
       ]
     },
-    "httr": {
-      "Package": "httr",
-      "Version": "1.4.2",
-      "Source": "Repository",
-      "Repository": "RSPM",
-      "Hash": "a525aba14184fec243f9eaec62fbed43",
-      "Requirements": [
-        "R6",
-        "curl",
-        "jsonlite",
-        "mime",
-        "openssl"
-      ]
-    },
     "jquerylib": {
       "Package": "jquerylib",
       "Version": "0.1.4",
@@ -241,16 +209,6 @@
       "Hash": "18e9c28c1d3ca1560ce30658b22ce104",
       "Requirements": []
     },
-    "openssl": {
-      "Package": "openssl",
-      "Version": "1.4.5",
-      "Source": "Repository",
-      "Repository": "RSPM",
-      "Hash": "5406fd37ef0bf9b88c8a4f264d6ec220",
-      "Requirements": [
-        "askpass"
-      ]
-    },
     "promises": {
       "Package": "promises",
       "Version": "1.2.0.1",
@@ -277,7 +235,7 @@
       "Package": "renv",
       "Version": "0.15.5",
       "Source": "Repository",
-      "Repository": "RSPM",
+      "Repository": "CRAN",
       "Hash": "6a38294e7d12f5d8e656b08c5bd8ae34",
       "Requirements": []
     },
@@ -338,14 +296,6 @@
       "Source": "Repository",
       "Repository": "RSPM",
       "Hash": "947e4e02a79effa5d512473e10f41797",
-      "Requirements": []
-    },
-    "sys": {
-      "Package": "sys",
-      "Version": "3.4",
-      "Source": "Repository",
-      "Repository": "RSPM",
-      "Hash": "b227d13e29222b4574486cfcbde077fa",
       "Requirements": []
     },
     "withr": {
