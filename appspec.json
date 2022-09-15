@@ -1,5 +1,13 @@
 {
-  "settings": [],
+  "settings": [
+    {
+      "id": "year",
+      "name": "The year.",
+      "description": "Insert description for the year setting setting",
+      "defaultValue": 2022,
+      "type": "INTEGER"
+    }
+  ],
   "dependencies": {
     "R": [
       {
