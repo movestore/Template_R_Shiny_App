@@ -1,12 +1,20 @@
 {
-  "settings": [],
+  "settings": [
+    {
+      "id": "year",
+      "name": "The year.",
+      "description": "Insert description for the year setting setting",
+      "defaultValue": 2022,
+      "type": "INTEGER"
+    }
+  ],
   "dependencies": {
     "R": [
       {
         "name": "lubridate",
         "version": "1.7.10"
       },
-	  {
+      {
         "name": "move"
       }
     ]
@@ -37,15 +45,15 @@
   ],
   "funding": [
     {
-	"name": "funder name",
-	"comment": "grant for App"
+      "name": "funder name",
+      "comment": "grant for App"
     }
   ],
   "references": [
     {
-	"type": "IsDescribedBy",
-	"note": "Darwin, C. 1900. The creation. Journal XY. 1-2",
-	"url": "https://anylink.xyz"
+      "type": "IsDescribedBy",
+      "note": "Darwin, C. 1900. The creation. Journal XY. 1-2",
+      "url": "https://anylink.xyz"
     }
   ],
   "documentation": {
