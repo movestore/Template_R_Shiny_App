@@ -22,3 +22,7 @@
 1. build the Docker image locally by `docker build -t $MY_MOVEAPPS_APP .`
 1. execute the image with `docker run --rm --name $MY_MOVEAPPS_APP -it -p 3838:3838 $MY_MOVEAPPS_APP`
 1. you will get a `bash` terminal of the running container. There you can get a R console by `R` or simply start your app by invoking `/home/moveapps/co-pilot-r/start-process.sh` inside the running container.
+
+## R Library management
+
+The template is prepared to use [`renv` as a dependency manager](https://rstudio.github.io/renv/articles/renv.html) - but is disabled ("opt-in") by default. You can [activate `renv` with `renv::activate()`](https://rstudio.github.io/renv/articles/renv.html#uninstalling-renv) and then use it in the [usual `renv` workflow](https://rstudio.github.io/renv/articles/renv.html#workflow).
