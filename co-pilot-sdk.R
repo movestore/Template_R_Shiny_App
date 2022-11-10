@@ -1,7 +1,7 @@
 ## Provided testing datasets in `./data/raw`: 
 ## "input1_pigeons.rds", "input2_geese.rds", "input3_stork.rds", "input4_goat.rds"  
 ## for own data: file saved as a .rds containing a object of class MoveStack
-inputFileName = "./data/raw/input1_pigeons.rds" 
+inputFileName = "./data/raw/input2_geese.rds" 
 ## optionally change the output file name
 dir.create("./data/output/")
 outputFileName = "./data/output/output.rds" 
@@ -17,8 +17,8 @@ outputFileName = "./data/output/output.rds"
 #    args[["department"]] = "any-department"
 
 args <- list()
-# Add your arguments of your r-function here
-args[["year"]] = 2014 
+# # Add your arguments of your r-function here
+# args[["year"]] = 2014 
 
 # this file is the home of your app code and will be bundled into the final app on MoveApps
 source("ShinyModule.R")
