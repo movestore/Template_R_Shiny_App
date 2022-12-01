@@ -6,3 +6,4 @@ data/output
 .cache/
 .config/
 .local/
+shiny_bookmarks/
