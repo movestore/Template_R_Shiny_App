@@ -4,18 +4,13 @@ source("src/common/logger.R")
 source("src/common/runtime_configuration.R")
 source("src/io/app_files.R")
 source("src/io/io_handler.R")
+source("src/io/shiny_bookmark_handler.R")
 source("src/io/rds.R")
 
 library("shiny")
 library("tidyverse")
-library("fs")
 
 Sys.setenv(tz="UTC")
-
-bookmarkRootDir = "shiny_bookmarks"
-bookmarkDir <- paste0(bookmarkRootDir, "/latest")
-# `input.rds` is the expected file name by shiny!
-bookmarkFileName <- "input.rds"
 
 ui <- function(request) { 
   fluidPage(
@@ -46,11 +41,7 @@ server <- function(input, output, session) {
     observeEvent(
       session,
       {
-        if(file_exists(path(bookmarkDir, bookmarkFileName)) && is.null(parseQueryString(session$clientData$url_search)$`_state_id_`)) {
-          updateQueryString(queryString = "?_state_id_=latest")
-          logger.info("Reloading session b/c of detected (not yet loaded) shiny bookmark")
-          session$reload()
-        }
+        restoreShinyBookmark(session)
       },
       once = TRUE
     )
@@ -81,19 +72,6 @@ server <- function(input, output, session) {
   # hook after persisting the bookmark
   # see https://shiny.rstudio.com/articles/advanced-bookmarking.html
   onBookmarked(function(url) {
-    stateId <- parseQueryString(sub("^.*\\?", "", url))$`_state_id_`
-    if(!dir_exists(bookmarkDir)){
-      dir_create(bookmarkDir)
-    }
-    file_move(
-      path = path(bookmarkRootDir, stateId, bookmarkFileName),
-      new_path = path(bookmarkDir, bookmarkFileName)
-    )
-    dir_delete(path(bookmarkRootDir, stateId))
-    logger.info(paste("Moved shiny bookmark", stateId, "to", bookmarkDir))
+    saveBookmarkAsLatest(url)
   })
-}
-
-simulateMoveAppsRun <- function(args) {
-  shinyApp(ui, server, enableBookmarking="server")
 }

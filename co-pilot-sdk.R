@@ -33,4 +33,4 @@ Sys.setenv(
 
 # simulate running your app on MoveApps
 source("src/moveapps.R")
-simulateMoveAppsRun(args)
+shinyApp(ui, server, enableBookmarking="server", options=list(port=7666))
