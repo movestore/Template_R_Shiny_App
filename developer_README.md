@@ -3,7 +3,7 @@
 ## General notes
 
 - get an overview with the help of the [user manual](https://docs.moveapps.org/#/hello_world_app)
-- your app codes goes to `./RFunction.R`
+- your app codes goes to `./ShinyModule.R`
 - setup your app arguments and your environment by adjusting `./co-pilot-sdk.R`
 - to run your app code locally execute the file `./co-pilot-sdk.R`
 
