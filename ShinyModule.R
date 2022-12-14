@@ -18,7 +18,7 @@ shinyModule <- function(input, output, session, data){ ## The parameter "data" i
   
   output$plot <- renderPlot({
     plot(data[[input$ind]])
-    })
+  })
   
   return(reactive({ current() }))
 }
