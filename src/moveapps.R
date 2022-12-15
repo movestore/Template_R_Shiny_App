@@ -7,9 +7,6 @@ source("src/io/io_handler.R")
 source("src/io/shiny_bookmark_handler.R")
 source("src/io/rds.R")
 
-library("shiny")
-library("tidyverse")
-
 Sys.setenv(tz="UTC")
 
 ui <- function(request) { 
