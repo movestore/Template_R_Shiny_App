@@ -1,9 +1,8 @@
 library("shiny")
 library("move")
-library("tidyverse")
 
 # to display messages to the user in the log file of the App in MoveApps
-# one can use the function from the logger.R file:
+# one can use the function from the src/common/logger.R file:
 # logger.fatal() -> logger.trace()
 
 shinyModuleUserInterface <- function(id, label) {

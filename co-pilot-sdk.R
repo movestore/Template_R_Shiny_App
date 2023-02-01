@@ -1,7 +1,7 @@
 ## Provided testing datasets in `./data/raw`: 
-## "input1_pigeons.rds", "input2_geese.rds", "input3_stork.rds", "input4_goat.rds"  
+## "input1_greylgeese.rds", "input2_whitefgeese.rds", "input3_stork.rds", "input4_goat.rds"  
 ## for own data: file saved as a .rds containing a object of class MoveStack
-inputFileName = "./data/raw/input2_geese.rds" 
+inputFileName = "./data/raw/input2_whitefgeese.rds" 
 ## optionally change the output file name
 dir.create("./data/output/")
 outputFileName = "./data/output/output.rds" 
