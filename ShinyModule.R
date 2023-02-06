@@ -22,5 +22,5 @@ shinyModule <- function(input, output, session, data){ ## The parameter "data" i
     plot(data[[input$ind]])
   })
   
-  return(reactive({ current() }))
+  return(reactive({ current() })) ## if data are not modified, the unmodified input data must be returned
 }
