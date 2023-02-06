@@ -1,13 +1,5 @@
 {
-  "settings": [
-    {
-      "id": "year",
-      "name": "The year.",
-      "description": "Insert description for the year setting setting",
-      "defaultValue": 2022,
-      "type": "INTEGER"
-    }
-  ],
+  "settings": [],
   "dependencies": {
     "R": [
       {
@@ -57,7 +49,7 @@
     }
   ],
   "documentation": {
-    "url": "https://github.com/movestore/my-app/README.md"
+    "url": "https://github.com/yourAccount/Name-of-App/.../README.md"
   }
 }
 
