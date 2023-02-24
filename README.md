@@ -32,6 +32,9 @@ Github repository: *github.com/yourAccount/Name-of-App* *(the link to the reposi
 
 `Store settings`: click to store the current settings of the app for future workflow runs
 
+### Most common errors
+*Please describe shortly what most common errors of the App can be, how they occur and best ways of solving them.*
+
 ### Null or error handling
 *Please indicate for each parameter as well as the input data which behaviour the App is supposed to show in case of errors or NULL values/input. Please also add notes of possible errors that can happen if parameters are improperly set and any other important information that you find the user should be aware of.*
 
