@@ -3,6 +3,7 @@
 ## for own data: file saved as a .rds containing a object of class MoveStack
 inputFileName = "./data/raw/input2_whitefgeese.rds" 
 ## optionally change the output file name
+unlink("./data/output/", recursive = TRUE) # delete "output" folder if it exists, to have a clean start for every run
 dir.create("./data/output/") # create folder for output
 outputFileName = "./data/output/output.rds" 
 
