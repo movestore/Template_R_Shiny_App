@@ -10,4 +10,6 @@ source("src/common/runtime_configuration.R")
 
 # Lets simulate running your app on MoveApps
 source("src/moveapps.R")
-shinyApp(ui, server, enableBookmarking="server")
+options(shiny.host = "0.0.0.0")
+options(shiny.port = 3838)
+shinyApp(ui, server, enableBookmarking = "server")
