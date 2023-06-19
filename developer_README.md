@@ -82,10 +82,13 @@ The file `./.env` is **hidden** by default in `RStudio`! You can show it by
 
 Which files will be bundled into the final App running on MoveApps?
 
-- the file `./RFunction.R`
+- the file `./ShinyModule.R
 - all directories defined in your `appspec.json` at `providedAppFiles` 
 
 Nothing else.
+
+Note that many App features will be set and updated with information from the `appspec.json` in each new App version. Thus, even if not bundled into the App, this file is required and must be up to date.
+
 
 ## App development
 
