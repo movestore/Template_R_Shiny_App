@@ -1,13 +1,14 @@
 # tie everything together
 # the following files will NOT bundled into the final app - they are just helpers in the SDK
 source("src/common/logger.R")
-source("src/common/runtime_configuration.R")
 source("src/io/app_files.R")
 source("src/io/io_handler.R")
 source("src/io/shiny_bookmark_handler.R")
 source("src/io/rds.R")
 
-Sys.setenv(tz="UTC")
+# `./ShinyModule.R` is the home of your app code
+# It is the only file which will be bundled into the final app on MoveApps
+source("ShinyModule.R")
 
 ui <- function(request) { 
   fluidPage(
