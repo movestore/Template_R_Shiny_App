@@ -104,9 +104,9 @@ tbd (should be supported by SDK - must be tested by sample app implementation. P
 
 ## Include files to your App
 
-tbd (`appspec.json` only allows `setting` items of type `LOCAL_FILE` (only soft validation))
+[Details and examples about _auxiliary files_](https://docs.moveapps.org/#/auxiliary).
 
-[Details and examples about _auxiliary files_](https://docs.moveapps.org/#/auxiliary)
+This template also implements in `./ShinyModule.R` a showcase about this topics.
 
 ---
 
