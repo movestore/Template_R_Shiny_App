@@ -100,13 +100,15 @@ Note that many App features will be set and updated with information from the `a
 
 ### Request App configuration from your users
 
-tbd
+tbd (Shiny Bookmark instructions)
 
 ### Produce an App artefact
 
-tbd
+tbd (should be supported by SDK - must be tested by sample app implementation. Provide code snippets)
 
 ## Include files to your App
+
+tbd (`appspec.json` only allows `setting` items of type `LOCAL_FILE` (only soft validation))
 
 [Details and examples about _auxiliary files_](https://docs.moveapps.org/#/auxiliary)
 
