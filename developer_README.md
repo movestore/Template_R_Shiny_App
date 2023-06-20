@@ -20,7 +20,6 @@ This template is designed according to a file structure that is necessary for yo
 ├── README.md
 ├── Template_R_Shiny_App.Rproj
 ├── ShinyModule.R
-├── app-configuration.json
 ├── appspec.json
 ├── data
 │   ├── local_app_files
@@ -35,7 +34,6 @@ This template is designed according to a file structure that is necessary for yo
 ├── src
 │   ├── common
 │   │   ├── logger.R
-│   │   └── runtime_configuration.R
 │   ├── io
 │   │   ├── app_files.R
 │   │   ├── io_handler.R
@@ -64,8 +62,6 @@ Keep in mind that these variables are only changeable during App development and
 They are predefined with sensible defaults - they should work for you as they are.
 
 - `SOURCE_FILE`: path to input file for your App during development
-- `CONFIGURATION_FILE`: configuration of your App ([JSON](https://www.w3schools.com/js/js_json_intro.asp) - must correspondent with the `settings` of your `appspec.json`)
-- `PRINT_CONFIGURATION`: prints the configuration your App receives (`yes|no`)
 - `LOCAL_APP_FILES_DIR`: base directory of your local App files (*auxiliary*)
 - `OUTPUT_FILE`: path to output file of your App
 - `APP_ARTIFACTS_DIR`: base directory for writing App artifacts

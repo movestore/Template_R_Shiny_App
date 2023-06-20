@@ -25,7 +25,7 @@ RUN R -e "remotes::install_github('rstudio/renv@${RENV_VERSION}')"
 COPY --chown=moveapps:staff src/ ./src/
 COPY --chown=moveapps:staff data/ ./data/
 COPY --chown=moveapps:staff www/ ./www/
-COPY --chown=moveapps:staff sdk.R ShinyModule.R .env app-configuration.json start-process.sh ./
+COPY --chown=moveapps:staff sdk.R ShinyModule.R .env start-process.sh ./
 
 # restore the current snapshot
 COPY --chown=moveapps:staff renv.lock .Rprofile ./
