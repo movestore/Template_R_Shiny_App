@@ -7,10 +7,15 @@ library("move")
 
 shinyModuleUserInterface <- function(id, label) {
   ns <- NS(id) ## all IDs of UI functions need to be wrapped in ns()
+  # showcase to access a file ('auxiliary files') that is 
+  # a) provided by the app-developer and 
+  # b) can be overridden by the workflow user.
+  fileName <- paste0(getAppFilePath("yourLocalFileSettingId"), "sample.txt")
   tagList(
     titlePanel("Plot of Track"),
     numericInput(inputId = ns("ind"), label = "Select one indivdual", value = 1),
-    plotOutput(ns("plot"))
+    plotOutput(ns("plot")),
+    p(readChar(fileName, file.info(fileName)$size))
   )
 }
 
