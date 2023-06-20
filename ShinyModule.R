@@ -6,7 +6,8 @@ library("move")
 # logger.fatal(), logger.error(), logger.warn(), logger.info(), logger.debug(), logger.trace()
 
 shinyModuleUserInterface <- function(id, label) {
-  ns <- NS(id) ## all IDs of UI functions need to be wrapped in ns()
+  # all IDs of UI functions need to be wrapped in ns()
+  ns <- NS(id)
   # showcase to access a file ('auxiliary files') that is 
   # a) provided by the app-developer and 
   # b) can be overridden by the workflow user.
