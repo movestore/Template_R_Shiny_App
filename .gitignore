@@ -3,7 +3,8 @@
 .RData
 .Ruserdata
 .DS_Store
-data/output
+data/output/**
+!data/output/.keep
 .cache/
 .config/
 .local/
