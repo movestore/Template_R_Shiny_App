@@ -32,5 +32,5 @@ getAppFilePath <- function(appSpecLocalFileSettingId, fallbackToProvidedFiles=TR
 #' @return Path for the artifact. Use it to write your data
 #'
 appArtifactPath <- function(artifactName) {
-    return(paste0(Sys.getenv(x = "APP_ARTIFACTS_DIR", "/tmp/"), artifactName))
+    return(paste0(Sys.getenv(x = "APP_ARTIFACTS_DIR", "."), artifactName))
 }

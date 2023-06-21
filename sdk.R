@@ -6,6 +6,8 @@ load_dot_env()
 
 # provide common stuff
 source("src/common/logger.R")
+source("src/common/runtime_configuration.R")
+clearRecentOutput()
 
 # Lets simulate running your app on MoveApps
 source("src/moveapps.R")

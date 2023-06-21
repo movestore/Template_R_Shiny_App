@@ -1,6 +1,10 @@
 # Changelog SDK
 
-## 2023-05-11 `v3.0.0`
+## 2023-06 `v3.0.1`
+
+- clear app output of previously app run at each start of the SDK
+
+## 2023-06 `v3.0.0`
 
 - introduces template versioning (starting w/ `v3.0.0` as this is the third major iteraction)
 - introduces `dotenv` to control/adjust local app-development
