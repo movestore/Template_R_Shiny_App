@@ -19,6 +19,12 @@
     ]
   },
   "createsArtifacts": true,
+  "providedAppFiles": [
+    {
+      "settingId": "yourLocalFileSettingId",
+      "from": "data/local_app_files/provided-app-files/yourLocalFileSettingId/"
+    }
+  ],
   "license": {
     "key": "MIT"
   },
