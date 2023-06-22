@@ -21,7 +21,7 @@ ui <- function(request) {
     # kudos: https://github.com/rstudio/shiny/issues/2110#issuecomment-419971302
     textOutput("ws_heartbeat"),
     # store the current state (as a shiny bookmark)
-    bookmarkButton(title="Save state",class="btn btn-outline-success")
+    bookmarkButton(label="Store settings", title="Click here to store the current chosen settings for future runs of the workflow",class="btn btn-outline-success")
   )
 }
 
