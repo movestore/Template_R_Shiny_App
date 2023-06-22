@@ -38,7 +38,3 @@ errorFile <- function() {
   logger.debug("errorFile: %s", result)
   result
 }
-
-notifyDone <- function(executionRuntime) {
-    logger.trace("I'm ready.")
-}

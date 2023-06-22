@@ -1,5 +1,5 @@
 ########################################################################################################################
-# MoveApps R-SHINY SDK
+# MoveApps R SDK
 ########################################################################################################################
 
 FROM rocker/geospatial:4.2.2
@@ -24,15 +24,11 @@ RUN R -e "remotes::install_github('rstudio/renv@${RENV_VERSION}')"
 # copy the SDK
 COPY --chown=moveapps:staff src/ ./src/
 COPY --chown=moveapps:staff data/ ./data/
-COPY --chown=moveapps:staff www/ ./www/
-COPY --chown=moveapps:staff sdk.R ShinyModule.R .env start-process.sh ./
+COPY --chown=moveapps:staff sdk.R RFunction.R .env app-configuration.json start-process.sh ./
 
 # restore the current snapshot
 COPY --chown=moveapps:staff renv.lock .Rprofile ./
 COPY --chown=moveapps:staff renv/activate.R renv/settings.dcf ./renv/
 RUN R -e 'renv::restore()'
-
-# shiny port
-EXPOSE 3838
 
 ENTRYPOINT ["/bin/bash"]
