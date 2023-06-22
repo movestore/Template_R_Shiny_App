@@ -2,7 +2,7 @@ library("shiny")
 library("move")
 
 # to display messages to the user in the log file of the App in MoveApps
-# one can use the function from the logger.R file:
+# one can use the function from the src/common/logger.R file:
 # logger.fatal(), logger.error(), logger.warn(), logger.info(), logger.debug(), logger.trace()
 
 shinyModuleUserInterface <- function(id, label) {
@@ -12,9 +12,10 @@ shinyModuleUserInterface <- function(id, label) {
   # a) provided by the app-developer and 
   # b) can be overridden by the workflow user.
   fileName <- paste0(getAppFilePath("yourLocalFileSettingId"), "sample.txt")
-  tagList(
-    titlePanel("Plot of Track"),
-    numericInput(inputId = ns("ind"), label = "Select one indivdual", value = 1),
+ 
+   tagList(
+    titlePanel("MoveApps R-Shiny SDK"),
+    uiOutput(ns('uiIndivL')),
     plotOutput(ns("plot")),
     p(readChar(fileName, file.info(fileName)$size))
   )
@@ -25,10 +26,16 @@ shinyModule <- function(input, output, session, data) {
   # all IDs of UI functions need to be wrapped in ns()
   ns <- session$ns
   current <- reactiveVal(data)
-
-  output$plot <- renderPlot({
-    plot(data[[input$ind]])
+  
+  ##--## example code - choose which individual to plot ##--## 
+  output$uiIndivL <- renderUI({
+    selectInput(ns("indivL"), "Select individual", choices=namesIndiv(data), selected=namesIndiv(data)[1])
   })
-  # if data are not modified, the unmodified input data must be returned
+  output$plot <- renderPlot({
+    plot(data[[input$indivL]])
+  })
+  ##--## end of example ##--##
+  
+  # data must be returned. Either the unmodified input data, or the modified data by the app
   return(reactive({ current() }))
 }
