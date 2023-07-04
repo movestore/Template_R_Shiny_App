@@ -1,5 +1,6 @@
 library("shiny")
-library("move")
+library("move2")
+library("sf")
 
 # to display messages to the user in the log file of the App in MoveApps
 # one can use the function from the src/common/logger.R file:
@@ -29,10 +30,11 @@ shinyModule <- function(input, output, session, data) {
   
   ##--## example code - choose which individual to plot ##--## 
   output$uiIndivL <- renderUI({
-    selectInput(ns("indivL"), "Select individual", choices=namesIndiv(data), selected=namesIndiv(data)[1])
+    selectInput(ns("indivL"), "Select individual", choices=unique(mt_track_id(data)), selected=unique(mt_track_id(data))[1])
   })
   output$plot <- renderPlot({
-    plot(data[[input$indivL]])
+    dat <- filter_track_data(data, .track_id=input$indivL)
+    plot(st_geometry(mt_track_lines(dat)))
   })
   ##--## end of example ##--##
   

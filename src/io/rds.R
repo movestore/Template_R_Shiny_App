@@ -1,3 +1,6 @@
+library('move2')
+library('move')
+
 readRdsInput <- function(sourceFile) {
   if(!is.null(sourceFile) && sourceFile != "") {
     if (file.info(sourceFile)$size == 0) {
@@ -8,7 +11,14 @@ readRdsInput <- function(sourceFile) {
         stop("The App has received invalid input! It cannot process NULL-input. Check the output of the preceding App or adjust the datasource configuration. [code 10]")
     }
     logger.debug("Reading RDS from file '%s'", sourceFile)
-    return(readRDS(file = sourceFile))
+    rds <- readRDS(file = sourceFile)
+    if (is(rds,"MoveStack")) {
+      logger.warn("Received input data in format 'MoveStack'. Will convert it to 'move2'.")
+      data <- move2::mt_as_move2(rds)
+    } else {
+      data <- rds
+    }
+    return(data)
   } else {
     logger.debug("Skip loading: no source File")
   }
