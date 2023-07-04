@@ -13,7 +13,10 @@
         "name": "shiny"
       },
       {
-        "name": "move"
+        "name": "move2"
+      },
+      {
+        "name": "sf"
       }
     ]
   },
