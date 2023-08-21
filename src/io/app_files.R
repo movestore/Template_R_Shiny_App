@@ -11,7 +11,7 @@
 getAppFilePath <- function(appSpecLocalFileSettingId, fallbackToProvidedFiles=TRUE) {
     if(!is.null(appSpecLocalFileSettingId) && appSpecLocalFileSettingId != "") {
         userUpload <- paste0(Sys.getenv(x = "LOCAL_APP_FILES_DIR"), "/uploaded-app-files/", appSpecLocalFileSettingId, "/")
-        if (file.exists(userUpload) && list.files(userUpload) > 0) {
+        if (file.exists(userUpload) && length(list.files(userUpload)) > 0) {
             # directory exists and is not empty: user provided some files
             logger.info(paste0("Detected app-files provided by user for '", appSpecLocalFileSettingId, "'."))
             return(userUpload)
