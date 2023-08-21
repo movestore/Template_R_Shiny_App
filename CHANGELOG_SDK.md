@@ -3,6 +3,7 @@
 ## 2023-08 `v3.0.1`
 
 - removed MoveApps IO-Type dependency
+- bugfix app-file loading
 
 ## 2023-06 `v3.0.0`
 
