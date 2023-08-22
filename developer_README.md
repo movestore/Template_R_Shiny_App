@@ -61,10 +61,10 @@ Critical parts of the SDK can be adjusted by `environment variables`.
 Keep in mind that these variables are only changeable during App development and not during an App run on MoveApps.
 They are predefined with sensible defaults - they should work for you as they are.
 
-- `SOURCE_FILE`: path to input file for your App during development
-- `LOCAL_APP_FILES_DIR`: base directory of your local App files (*auxiliary*)
-- `OUTPUT_FILE`: path to output file of your App
+- `SOURCE_FILE`: path to an input file for your App during development
+- `OUTPUT_FILE`: path to the output file of your App
 - `APP_ARTIFACTS_DIR`: base directory for writing App artifacts
+- `LOCAL_APP_FILES_DIR`: base directory of your local App files (*auxiliary*)
 - `CLEAR_OUTPUT`: clears all output of the previously app run at each start of the SDK aka the next app start
 
 You can adjust these environment variables by adjusting the file `./.env`.
