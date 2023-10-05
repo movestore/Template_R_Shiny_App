@@ -3,6 +3,7 @@ README.md
 renv/
 *.Rproj
 appspec.json
+data/local_app_files/
 tests/testthat/test_ShinyModule.R
 # backward compatibility
 co-pilot-sdk.R
