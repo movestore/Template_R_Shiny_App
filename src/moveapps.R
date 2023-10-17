@@ -5,17 +5,19 @@ source("src/io/app_files.R")
 source("src/io/io_handler.R")
 source("src/io/shiny_bookmark_handler.R")
 source("src/io/rds.R")
+source("src/io/pilot_client.R")
 
 # `./ShinyModule.R` is the home of your app code
 # It is the only file which will be bundled into the final app on MoveApps
 source("ShinyModule.R")
+
+Sys.setenv(tz="UTC")
 
 ui <- function(request) { 
   fluidPage(
     tags$head(singleton(tags$script(src = 'ws-keep-alive-fix.js'))),
     tags$link(rel = "stylesheet", type = "text/css", href = "ws-keep-alive-fix.css"),
     shinyModuleUserInterface("shinyModule"),
-    dataTableOutput("table"), #Is necessary for storing result
 
     # ws-heartbeat fix
     # kudos: https://github.com/rstudio/shiny/issues/2110#issuecomment-419971302
@@ -44,7 +46,7 @@ server <- function(input, output, session) {
       once = TRUE
     )
 
-    output$table <- renderDataTable({
+    observe({
       storeResult(result(), outputFile())
       notifyDone("SHINY")
     })
@@ -71,5 +73,6 @@ server <- function(input, output, session) {
   # see https://shiny.rstudio.com/articles/advanced-bookmarking.html
   onBookmarked(function(url) {
     saveBookmarkAsLatest(url)
+    notifyPushBookmark(getLatestBookmarkFile())
   })
 }
