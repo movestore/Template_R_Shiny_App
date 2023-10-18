@@ -1,5 +1,7 @@
 # MoveApps R-SHINY Software Development Kit (SDK)
 
+##### ***NOTE*: this SDK only supports code written for input data of class `move2`. Please contact us under support@moveapps.org if you have any questions.**
+
 This documentation provides a short introduction to the [MoveApps](https://www.moveapps.org) **R-SHINY SDK**.
 
 As a first step, and before your read this, you should have forked this GitHub template to your personal space and named the repository as your App will be named in MoveApps.
