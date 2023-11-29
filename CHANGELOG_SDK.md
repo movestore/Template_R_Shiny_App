@@ -1,5 +1,9 @@
 # Changelog SDK
 
+## 2023-11 `v3.0.4`
+
+- Upgrade `R` framework to `4.3.2`
+
 ## 2023-10 `v3.0.3`
 
 - bugfix result/output observation (`'data' must be 2-dimensional`)
