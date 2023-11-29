@@ -2,7 +2,7 @@
 # MoveApps R-SHINY SDK
 ########################################################################################################################
 
-FROM rocker/geospatial:4.3.1
+FROM rocker/geospatial:4.3.2
 
 LABEL maintainer = "couchbits GmbH <us@couchbits.com>"
 
