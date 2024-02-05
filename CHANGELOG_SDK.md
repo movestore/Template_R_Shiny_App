@@ -4,6 +4,7 @@
 
 - introduce `appspec.json` version `1.2`
     - removed `createsArtifacts`. It is safe to remove it completely from your `appspec.json` - MoveApps tries now to fetch artifacts for every running App.
+    - verify to include the `null` option for setting types `DROPDOWN` and `RADIOBUTTONS` if `defaultValue` is set to `null`.
 
 ## 2023-12 `v3.0.5`
 
