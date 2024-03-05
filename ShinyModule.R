@@ -12,7 +12,7 @@ shinyModuleUserInterface <- function(id, label) {
   # showcase to access a file ('auxiliary files') that is 
   # a) provided by the app-developer and 
   # b) can be overridden by the workflow user.
-  fileName <- getAuxiliaryFilePath("yourUserFileSettingId")
+  fileName <- getAuxiliaryFilePath("auxiliary-file_id-a")
  
    tagList(
     titlePanel("MoveApps R-Shiny SDK"),
