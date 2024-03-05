@@ -24,7 +24,7 @@
   "providedAppFiles": [
     {
       "settingId": "yourUserFileSettingId",
-      "from": "data/local_app_files/provided-app-files/yourUserFileSettingId/"
+      "from": "data/local-app-files/provided-app-files/yourUserFileSettingId/"
     }
   ],
   "license": {
