@@ -24,7 +24,7 @@
   "providedAppFiles": [
     {
       "settingId": "auxiliary-file-a",
-      "from": "data/auxiliary/user-files/auxiliary-file-a/"
+      "from": "data/auxiliary/user-files/provided-app-file/auxiliary-file-a/sample.txt"
     }
   ],
   "license": {
