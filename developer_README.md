@@ -24,7 +24,7 @@ This template is designed according to a file structure that is necessary for yo
 ├── ShinyModule.R
 ├── appspec.json
 ├── data
-│   ├── local-app-files
+│   ├── auxiliary
 │   ├── output
 │   └── raw
 │       ├── input1.rds
@@ -51,7 +51,7 @@ This template is designed according to a file structure that is necessary for yo
 1. `./appspec.json`: This file defines the settings and metadata of your App, for details refer to the [MoveApps User Manual](https://docs.moveapps.org/#/appspec)
 1. `./renv.lock`: Definition of the dependencies of your App. We use `renv` as library manager. Optional.
 1. `./data/**`: Resources of the SDK
-   1. `local-app-files/**`: Simulates the usage of [*app files*](https://docs.moveapps.org/#/auxiliary). You can put files into this folder to simulate an App run with provided/user-uploaded files. 
+   1. `auxiliary/**`: Simulates the usage of [*auxiliary App files*](https://docs.moveapps.org/#/auxiliary). You can put files into this folder to simulate an App run with provided/user-uploaded files. 
    1. `output/**`: If your App produces [*artefacts*](https://docs.moveapps.org/#/copilot-r-sdk?id=artefacts) they will be stored here.
    1. `raw/**`: Collection of sample App input data. You can use these samples to simulate an App run with real input.
 1. `./sdk/**`: The (internal) MoveApps R SDK logic.

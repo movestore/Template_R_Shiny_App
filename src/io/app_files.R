@@ -10,17 +10,21 @@
 #' @return Path to requested file. Or `NULL` if user did not upload anything and no fallback was provided.
 #' 
 getAuxiliaryFilePath <- function(appSpecUserFileSettingId, fallbackToProvidedFiles=TRUE) {
-    userUploadDir <- paste0(Sys.getenv(x = "USER_APP_FILE_HOME_DIR"), Sys.getenv(x = "USER_APP_FILE_UPLOAD_DIR", "/uploaded-app-files/"))
-    appDevFallbackDir <- paste0(Sys.getenv(x = "USER_APP_FILE_HOME_DIR"), Sys.getenv(x = "USER_APP_FILE_FALLBACK_DIR", "/provided-app-files/"))
+    userUploadDir <- paste0(Sys.getenv(x = "USER_APP_FILE_HOME_DIR"), Sys.getenv(x = "USER_APP_FILE_UPLOAD_DIR", "/uploaded-app-file/"))
+    appDevFallbackDir <- paste0(Sys.getenv(x = "USER_APP_FILE_HOME_DIR"), Sys.getenv(x = "USER_APP_FILE_FALLBACK_DIR", "/provided-app-file/"))
     dir <- getUploadDirOrFallbackDir(appSpecUserFileSettingId, fallbackToProvidedFiles, userUploadDir, appDevFallbackDir)
     if (is.null(dir)) {
+        logger.warn("[%s] No files found for App setting '%s'. Therefor return null..", appSpecUserFileSettingId)
         return(NULL)
     }
     if (length(list.files(dir)) != 1) {
+        logger.warn("[%s] A App setting of type `USER_FILE` must contain exactly 0 or 1 file(s). The setting contains '%s' file(s). Therefor returning `null`..", appSpecUserFileSettingId, length(list.files(dir)))
         return(NULL)
     }
     # R vectors are one-based!
-    return(paste0(dir, list.files(dir)[1]))
+    result <- paste0(dir, list.files(dir)[1])
+    logger.info("[%s] Resolved file-path: '%s'", appSpecUserFileSettingId, result)
+    return(result)
 }
 
 #' DEPRECATED!
@@ -28,8 +32,8 @@ getAuxiliaryFilePath <- function(appSpecUserFileSettingId, fallbackToProvidedFil
 getAppFilePath <- function(appSpecUserFileSettingId, fallbackToProvidedFiles=TRUE) {
     .Deprecated("getAuxiliaryFilePath")
     ### please migrate from `LOCAL_FILE` to `USER_FILE` app-setting type.
-    userUploadDir <- paste0(Sys.getenv(x = "LOCAL_APP_FILES_DIR"), "/uploaded-app-files/")
-    appDevFallbackDir <- paste0(Sys.getenv(x = "LOCAL_APP_FILES_DIR"), "/provided-app-files/")
+    userUploadDir <- paste0(Sys.getenv(x = "LOCAL_APP_FILES_DIR"), "/uploaded-app-file/")
+    appDevFallbackDir <- paste0(Sys.getenv(x = "LOCAL_APP_FILES_DIR"), "/provided-app-file/")
     return(getUploadDirOrFallbackDir(appSpecUserFileSettingId, fallbackToProvidedFiles, userUploadDir, appDevFallbackDir))
 }
 
