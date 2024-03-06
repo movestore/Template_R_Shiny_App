@@ -4,7 +4,7 @@
     {
       "id": "auxiliary-file-a",
       "name": "Personalization",
-      "description": "You can personalize the dashboard by providing a file named 'sample.txt'",
+      "description": "You can personalize the app by providing a file",
       "type": "USER_FILE"
     }
   ],
