@@ -10,8 +10,8 @@
 #' @return Path to requested file. Or `NULL` if user did not upload anything and no fallback was provided.
 #' 
 getAuxiliaryFilePath <- function(appSpecUserFileSettingId, fallbackToProvidedFiles=TRUE) {
-    userUploadDir <- paste0(Sys.getenv(x = "USER_APP_FILE_HOME_DIR"), Sys.getenv(x = "USER_APP_FILE_UPLOAD_DIR", "/uploaded-app-file/"))
-    appDevFallbackDir <- paste0(Sys.getenv(x = "USER_APP_FILE_HOME_DIR"), Sys.getenv(x = "USER_APP_FILE_FALLBACK_DIR", "/provided-app-file/"))
+    userUploadDir <- paste0(Sys.getenv(x = "USER_APP_FILE_HOME_DIR"), Sys.getenv(x = "USER_APP_FILE_UPLOAD_DIR", "/uploaded-app-files/"))
+    appDevFallbackDir <- paste0(Sys.getenv(x = "USER_APP_FILE_HOME_DIR"), Sys.getenv(x = "USER_APP_FILE_FALLBACK_DIR", "/provided-app-files/"))
     dir <- getUploadDirOrFallbackDir(appSpecUserFileSettingId, fallbackToProvidedFiles, userUploadDir, appDevFallbackDir)
     if (is.null(dir)) {
         logger.warn("[%s] No files found for App setting '%s'. Therefor return null..", appSpecUserFileSettingId)
@@ -32,8 +32,8 @@ getAuxiliaryFilePath <- function(appSpecUserFileSettingId, fallbackToProvidedFil
 getAppFilePath <- function(appSpecUserFileSettingId, fallbackToProvidedFiles=TRUE) {
     .Deprecated("getAuxiliaryFilePath")
     ### please migrate from `LOCAL_FILE` to `USER_FILE` app-setting type.
-    userUploadDir <- paste0(Sys.getenv(x = "LOCAL_APP_FILES_DIR"), "/uploaded-app-file/")
-    appDevFallbackDir <- paste0(Sys.getenv(x = "LOCAL_APP_FILES_DIR"), "/provided-app-file/")
+    userUploadDir <- paste0(Sys.getenv(x = "LOCAL_APP_FILES_DIR"), "/uploaded-app-files/")
+    appDevFallbackDir <- paste0(Sys.getenv(x = "LOCAL_APP_FILES_DIR"), "/provided-app-files/")
     return(getUploadDirOrFallbackDir(appSpecUserFileSettingId, fallbackToProvidedFiles, userUploadDir, appDevFallbackDir))
 }
 
