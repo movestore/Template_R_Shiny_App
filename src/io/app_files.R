@@ -14,7 +14,7 @@ getAuxiliaryFilePath <- function(appSpecUserFileSettingId, fallbackToProvidedFil
     appDevFallbackDir <- paste0(Sys.getenv(x = "USER_APP_FILE_HOME_DIR"), Sys.getenv(x = "USER_APP_FILE_FALLBACK_DIR", "/provided-app-files/"))
     dir <- getUploadDirOrFallbackDir(appSpecUserFileSettingId, fallbackToProvidedFiles, userUploadDir, appDevFallbackDir)
     if (is.null(dir)) {
-        logger.warn("[%s] No files found for App setting '%s'. Therefor return null..", appSpecUserFileSettingId)
+        logger.warn("[%s] No files found for App setting. Therefor returning `null``..", appSpecUserFileSettingId)
         return(NULL)
     }
     if (length(list.files(dir)) != 1) {
@@ -46,14 +46,18 @@ getUploadDirOrFallbackDir <- function(appSpecUserFileSettingId, fallbackToProvid
         userUpload <- paste0(userUploadDir, appSpecUserFileSettingId, "/")
         if (file.exists(userUpload) && length(list.files(userUpload)) > 0) {
             # directory exists and is not empty: user provided some files
-            logger.info(paste0("Detected app-files provided by user for '", appSpecUserFileSettingId, "'."))
+            logger.debug("[%s] Detected files provided by user.", appSpecUserFileSettingId)
             return(userUpload)
         } else if (fallbackToProvidedFiles) {
             # fallback to directory provided by app developer
-            logger.info(paste0("Using fallback files provided by app developer for '", appSpecUserFileSettingId, "'."))
+            logger.debug("[%s] Using fallback files provided by app developer.", appSpecUserFileSettingId)
             return(paste0(appDevFallbackDir, appSpecUserFileSettingId, "/"))
         } else {
-            logger.warn(paste0("No files present for app-files '", appSpecUserFileSettingId, "': User did not upload anything and the app did not provide fallback files."))
+            if (fallbackToProvidedFiles) {
+                logger.warn("[%s] No files present for app-file-setting. User did not upload anything and the app did not provide fallback files.", appSpecUserFileSettingId)
+            } else {
+                logger.info("[%s] No files present for app-file-setting. User did not upload anything.", appSpecUserFileSettingId)
+            }
             return(NULL)
         }
     }
