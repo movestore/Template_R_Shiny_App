@@ -2,10 +2,10 @@
   "version": "1.2",
   "settings": [
     {
-      "id": "yourLocalFileSettingId",
+      "id": "auxiliary-file-a",
       "name": "Personalization",
-      "description": "You can personalize the dashboard by providing a file named 'sample.txt'",
-      "type": "LOCAL_FILE"
+      "description": "You can personalize the app by providing a file",
+      "type": "USER_FILE"
     }
   ],
   "dependencies": {
@@ -23,8 +23,8 @@
   },
   "providedAppFiles": [
     {
-      "settingId": "yourLocalFileSettingId",
-      "from": "data/local_app_files/provided-app-files/yourLocalFileSettingId/"
+      "settingId": "auxiliary-file-a",
+      "from": "data/auxiliary/user-files/provided-app-files/auxiliary-file-a/sample.txt"
     }
   ],
   "license": {
