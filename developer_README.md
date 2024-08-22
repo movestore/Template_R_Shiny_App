@@ -53,13 +53,12 @@ The file `./.env` is **hidden** by default in `RStudio`! You can show it by
 Which files will be bundled into the final App running on MoveApps?
 
 - the file `./ShinyModule.R
-- all directories defined in your `appspec.json` at `providedAppFiles` 
+- all directories defined in your `appspec.json` at `providedAppFiles`
+
+- the file `./appspec.json` will be used to build and create the metadata of your App
+- the file `./README.md` will be reference to for the documentation of your App
 
 Nothing else.
-
-Note that many App features will be set and updated with information from the `appspec.json` in each new App version. Thus, even if not bundled into the App, this file is required and must be up to date.
-
-You are also required to write a documentation file (see [Step 6](https://docs.moveapps.org/#/create_app#step-6-write-a-documentation-file) in the User Manual).
 
 
 ## R packages management / renv (optional)
@@ -70,8 +69,7 @@ You can [activate `renv` with `renv::activate()`](https://rstudio.github.io/renv
 
 ### Docker support (optional)
 
-Your app will be executed on MoveApps in a Docker container. Specially for debugging errors that are not straight forward, it can be very useful to execute your App in a docker environment. These more complex errors are often due to system libraries that need to be installed in MoveApps to run the App. The easiest way to find out which ones they are is to run the App locally in a docker environment:
-- if you like you can test your app in the almost final environment by running your app locally in a docker container:
+Your app will be executed on MoveApps in a Docker container. Specially for debugging errors that are not straight forward, it can be very useful to execute your App in a docker container. These more complex errors are often due to system libraries that need to be installed in MoveApps to run the App. The easiest way to find out which ones they are is to run the App locally in a docker container:
 
 1. enable `renv` (see above)
 1. set a working title for your app by `export MY_MOVEAPPS_APP=hello-world` (in your terminal)
