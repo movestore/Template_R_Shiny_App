@@ -1,10 +1,10 @@
 # MoveApps R-SHINY Software Development Kit (SDK)
 
-***NOTE*: this SDK only supports code written for input data of class `move2` and not `moveStack`, as all input data of class `moveStack` will be converted to class `move2`. For all other input/output types, this SDK works as usual. Please contact us under support@moveapps.org if you have any questions.**
+***NOTE*: this SDK supports code written for input data of class `move2` and not `moveStack`, as all input data of class `moveStack` will be converted to class `move2`. For all other input/output types, this SDK works as usual. Please contact us under support@moveapps.org if you have any questions.**
 
 This documentation provides a short introduction to the [MoveApps](https://www.moveapps.org) **R-SHINY SDK**.
 
-As a first step, and before your read this, you should have used this GitHub template to create a copy of it in your personal space and named the repository as your App will be named in MoveApps (please adhere to our convention of Title Case, e.g. My New App).
+As a first step, and before your read this, you should have used this GitHub template to create a copy of it in your personal space and named the repository as your App will be named in MoveApps.
 
 **The [MoveApps User Manual](https://docs.moveapps.org/#/create_app) provides a step-by-step explanation of how to create an App.** Please carefully follow these steps when creating a MoveApps App.
 
@@ -13,22 +13,24 @@ As a first step, and before your read this, you should have used this GitHub tem
 
 This template is designed according to a file structure that is necessary for your App to run in your local development environment similar to the way it will run in the MoveApps environment later. Please contain the structure and only change/add files as necessary for your App's functionality. Take a look at the [overview in the User Manual](https://docs.moveapps.org/#/create_app) to see which files can be changed and which should remain as is for simulation of the behaviour on MoveApps on your local system.
 
-Here you find an overview of the files and their function in the SDK.
+Here you find an overview of the files and their function in the SDK:
 
-1. `./ShinyModule.R`: This is the entrypoint for your App logic. MoveApps will call this function during a Workflow execution which includes your App. The file must be named `ShinyModule.R`, do not alter it. See [Step 3](https://docs.moveapps.org/#/create_app#step-3-develop-the-app-code-locally-within-the-template) in the User Manual.
-1. `./appspec.json`: This file defines the settings and metadata of your App. See [Step 5](https://docs.moveapps.org/#/create_app#step-5-write-app-specifications) in the User Manual.
+1. `./ShinyModule.R`: must be modified by the developer. This is the entry point for your App logic. MoveApps will call this function during a Workflow execution which includes your App. The file must be named `ShinyModule.R`, do not alter it. See [Step 3](https://docs.moveapps.org/#/create_app#step-3-develop-the-app-code-locally-within-the-template) in the User Manual.
+1. `./appspec.json`: must be modified by the developer. This file defines the settings and metadata of your App. See [Step 5](https://docs.moveapps.org/#/create_app#step-5-write-app-specifications) in the User Manual.
+1. `1. `./README.md`: must be modified by the developer. Provided template for the documentation of the App (see [Step 6](https://docs.moveapps.org/#/create_app#step-6-write-a-documentation-file) in the User Manual).
 1. `./renv.lock`: Definition of the dependencies of your App. We use `renv` as library manager. Optional, see below.
 1. `./data/**`: Resources of the SDK
+1. `./sdk.R`: use for App testing. The main entry point of the SDK. Use it to execute your App in your compiler (e.g. RStudio).
+1. `/.env`: adjust for App testing. Defining the SDK Runtime environment, see below. Make sure to check _Show Hidden Files_ in the settings menu of the _Files_ tab in RStudio.
+1. `./data/**`: use for App testing. Resources of the SDK
    1. `auxiliary/**`: Simulates the usage of [*auxiliary files*](https://docs.moveapps.org/#/auxiliary). You can put files into this folder to simulate an App run with provided/user-uploaded files. 
-   1. `output/**`: If your App produces output files (artifacts) they will be stored here. See [*producing artifacts*](https://docs.moveapps.org/#/copilot-shiny-sdk?id=producing-artefacts) for more information.
+   1. `output/**`: The output data (`output.rds`) that will be passed on to the next App in a Workflow and other output files (artifacts) that your App may produce will be stored here. See [*producing artifacts*](https://docs.moveapps.org/#/copilot-shiny-sdk?id=producing-artefacts) for more information.
    1. `raw/**`: Collection of sample App input data. You can use these samples to simulate an App run with real input.
-1. `./sdk/**`: The (internal) MoveApps R SDK logic.
-1. `./sdk.R`: The main entry point of the SDK. Use it to execute your App in your compiler (e.g. RStudio).
-1. `.env`: defining the SDK Runtime environment, see below.
+1. all remaining files are used to emulate MoveApps when testing the App locally, to setup the automatic sync of your repository with the template, or to provide information related to the template. **These files are not to be modified**. Modifying them will prevent you from testing your App appropriately. 
 
-## SDK Runtime environment
+## SDK runtime environment
 
-Critical parts of the SDK can be adjusted by `environment variables`. Keep in mind that these variables are only changeable during App development and not during an App run on MoveApps. They are predefined with sensible defaults - they should work for you as they are.
+Critical parts of the SDK can be adjusted by `environment variables`. Keep in mind that these variables are only changeable during App development and not during an App run on MoveApps. They are predefined with sensible defaults - they should work for you as they are. While testing your App you will want to modify the `SOURCE_FILE` variable to either call the different example data sets provided in the template or other data sets that you want to use to test your App.
 
 - `SOURCE_FILE`: path to an input file for your App during development
 - `OUTPUT_FILE`: path to the output file of your App
@@ -68,7 +70,7 @@ You can [activate `renv` with `renv::activate()`](https://rstudio.github.io/renv
 
 ### Docker support (optional)
 
-- at the end your app will be executed on MoveApps in a Docker container.
+Your app will be executed on MoveApps in a Docker container. Specially for debugging errors that are not straight forward, it can be very useful to execute your App in a docker environment. These more complex errors are often due to system libraries that need to be installed in MoveApps to run the App. The easiest way to find out which ones they are is to run the App locally in a docker environment:
 - if you like you can test your app in the almost final environment by running your app locally in a docker container:
 
 1. enable `renv` (see above)
