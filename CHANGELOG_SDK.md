@@ -1,4 +1,7 @@
 # Changelog SDK
+## XXX XXX
+- update of `README.md` including new sections
+- update of `developer_README.md`
 
 ## 2024-03 `v3.2.0`
 
