@@ -16,8 +16,8 @@ This template is designed according to a file structure that is necessary for yo
 Here you find an overview of the files and their function in the SDK:
 
 1. `./ShinyModule.R`: must be modified by the developer. This is the entrypoint for your App logic. MoveApps will call this function during a Workflow execution which includes your App. The file must be named `ShinyModule.R`, do not alter it. See [Step 3](https://docs.moveapps.org/#/create_app#step-3-develop-the-app-code-locally-within-the-template) in the User Manual.
-1. `./appspec.json`: must be modified by the developer. This file defines the settings and metadata of your App. See [Step 5](https://docs.moveapps.org/#/create_app#step-5-write-app-specifications) in the User Manual.
-1. `1. `./README.md`: must be modified by the developer. Provided template for the documentation of the App (see [Step 6](https://docs.moveapps.org/#/create_app#step-6-write-a-documentation-file) in the User Manual).
+1. `./appspec.json`: must be modified by the developer. This file defines the settings and metadata of your App. See [Step 6](https://docs.moveapps.org/#/create_app?id=step-6-write-app-specifications) in the User Manual.
+1. `./README.md`: must be modified by the developer. Provided template for the documentation of the App (see [Step 7](https://docs.moveapps.org/#/create_app?id=step-7-write-a-documentation-file) in the User Manual).
 1. `./renv.lock`: Definition of the dependencies of your App. We use `renv` as library manager. Optional, see below.
 1. `./data/**`: Resources of the SDK
 1. `./sdk.R`: use for App testing. The main entrypoint of the SDK. Use it to execute your App in your compiler (e.g. RStudio).
