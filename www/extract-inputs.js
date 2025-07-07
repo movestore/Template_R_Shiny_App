@@ -1,6 +1,6 @@
-Shiny.addCustomMessageHandler('extract-shiny-input', extractShinyInputs)
+Shiny.addCustomMessageHandler('extract-shiny-input', extractShinyInput)
 
-function extractShinyInputs(message) {
+function extractShinyInput(message) {
     const inputs = document.querySelectorAll('.shiny-input-container');
     const results = [];
 
