@@ -62,6 +62,7 @@ server <- function(input, output, session) {
     observeEvent(input$shiny_input_json, {
       req(input$shiny_input_json)
       saveInputAsJson(input$shiny_input_json)
+      notifyPushBookmark("input.json")
     })
     observe({
       storeResult(result(), outputFile())
@@ -90,6 +91,6 @@ server <- function(input, output, session) {
   # see https://shiny.rstudio.com/articles/advanced-bookmarking.html
   onBookmarked(function(url) {
     saveBookmarkAsLatest(url)
-    notifyPushBookmark(getLatestBookmarkFile())
+    notifyPushBookmark("input.rds")
   })
 }

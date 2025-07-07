@@ -1,7 +1,7 @@
 notifyDone <- function(executionType) {
-  logger.debug("[http client fake] notify done")
+  logger.debug("[http fake client] notify done")
 }
 
 notifyPushBookmark <- function(fileName) {
-  logger.debug("[http client fake] notify push (shiny) bookmark")
+  logger.debug(paste("[http fake client] notify push (shiny) bookmark", fileName))
 }
