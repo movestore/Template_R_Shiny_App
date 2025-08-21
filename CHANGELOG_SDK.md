@@ -1,7 +1,8 @@
 # Changelog SDK
-## XXX XXX
-- update of `README.md` including new sections
-- update of `developer_README.md`
+
+## 2025-08 `v3.3.0`
+
+- extract app settings as a JSON file (bookmark.json)
 
 ## 2024-03 `v3.2.0`
 
