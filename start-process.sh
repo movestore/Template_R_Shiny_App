@@ -6,4 +6,4 @@ set -o errexit
 set -o pipefail
 set -o nounset
 
-R -e "library(shiny); runApp('sdk.R')"
+Rscript sdk.R
