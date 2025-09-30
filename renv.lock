@@ -780,18 +780,18 @@
     },
     "moveapps": {
       "Package": "moveapps",
-      "Version": "0.1.0",
+      "Version": "0.2.0",
       "Source": "GitHub",
       "RemoteType": "github",
       "RemoteHost": "api.github.com",
       "RemoteRepo": "moveapps-sdk-r-package",
       "RemoteUsername": "movestore",
-      "RemoteSha": "e9293dae0accc49ec9615b4110e1051ce3451151",
+      "RemoteSha": "aa2a38d12191a43af7c7829f9a3b62b05efcb3f0",
       "Requirements": [
         "fs",
         "jsonlite"
       ],
-      "Hash": "55f4685590c1474fb295650e4acdf125"
+      "Hash": "bd564db2dcc4ffef269ff0fab8cc52ab"
     },
     "openssl": {
       "Package": "openssl",
@@ -1066,13 +1066,8 @@
     },
     "renv": {
       "Package": "renv",
-      "Version": "1.0.11",
-      "Source": "Repository",
-      "Repository": "CRAN",
-      "Requirements": [
-        "utils"
-      ],
-      "Hash": "47623f66b4e80b3b0587bc5d7b309888"
+      "Version": "1.1.5",
+      "Source": "Repository"
     },
     "rlang": {
       "Package": "rlang",
