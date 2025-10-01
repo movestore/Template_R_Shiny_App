@@ -11,6 +11,7 @@ moveapps::clearRecentOutput()
 # Lets simulate running your app on MoveApps
 library("moveapps")
 Sys.setenv(tz="UTC")
+Sys.setenv(HTTP_CLIENT_FAKE="yes")
 # `./ShinyModule.R` is the home of your app code
 # It is the only file which will be bundled into the final app on MoveApps
 source("ShinyModule.R")

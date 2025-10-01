@@ -2115,7 +2115,8 @@
         "fs"
       ],
       "Suggests": [
-        "shiny"
+        "shiny",
+        "httr"
       ],
       "Roxygen": "list(markdown = TRUE)",
       "RoxygenNote": "7.3.3",
@@ -2124,7 +2125,7 @@
       "RemoteRepo": "moveapps-sdk-r-package",
       "RemoteUsername": "movestore",
       "RemoteRef": "HEAD",
-      "RemoteSha": "fba9e293ea7c0a1a5f15fded319a09a9f64599f6",
+      "RemoteSha": "463bfe7d7792053ca8751ebeb1a2f1bfe38cb4ab",
       "NeedsCompilation": "no",
       "Author": "Clemens Hahn [aut, cre]",
       "Maintainer": "Clemens Hahn <clemens@couchbits.com>"
