@@ -4,7 +4,7 @@
 dotenv::load_dot_env()
 
 # This loads and installs the MoveApps R SDK
-devtools::install_github("movestore/moveapps-sdk-r-package")
+devtools::install_github("movestore/moveapps-sdk-r-package@v0.2.0")
 moveapps::logger.init()
 moveapps::clearRecentOutput()
 

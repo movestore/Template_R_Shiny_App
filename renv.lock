@@ -2124,7 +2124,7 @@
       "RemoteHost": "api.github.com",
       "RemoteRepo": "moveapps-sdk-r-package",
       "RemoteUsername": "movestore",
-      "RemoteRef": "HEAD",
+      "RemoteRef": "v0.2.0",
       "RemoteSha": "87a60633cbd5c953481f9dc30d105f738a822e06",
       "NeedsCompilation": "no",
       "Author": "Clemens Hahn [aut, cre]",
