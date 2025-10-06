@@ -1,5 +1,11 @@
 # Changelog SDK
 
+## 2025-10 `v4.0.0`
+
+- extract MoveApps SDK scripts to R package [moveapps](https://github.com/movestore/moveapps-sdk-r-package) while keeping backward compatibility to v3
+- bump R to `v4.5.1` (`renv.lock` + `Dockerfile`)
+- support R source scripts from the `./src/app/` directory (must be sourced by the App Developer on their own)
+
 ## 2025-08 `v3.3.0`
 
 - extract app settings as a JSON file (bookmark.json)

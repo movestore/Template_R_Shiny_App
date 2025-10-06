@@ -52,7 +52,8 @@ The file `./.env` is **hidden** by default in `RStudio`! You can show it by
 
 Which files will be bundled into the final App running on MoveApps?
 
-- the file `./ShinyModule.R
+- the file `./ShinyModule.R`
+- everything inside the `./src/app/` directory. You have to ensure you source any scripts in this (sub)directory yourself. You can do this by defining, for example, `source(./src/app/common/common.R)` in your `shinyModule()`.
 - all directories defined in your `appspec.json` at `providedAppFiles`
 
 - the file `./appspec.json` will be used to build and create the metadata of your App
