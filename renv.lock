@@ -1285,7 +1285,7 @@
     },
     "moveapps": {
       "Package": "moveapps",
-      "Version": "0.2.0",
+      "Version": "1.0.0",
       "Source": "GitHub",
       "Title": "SDK for App Developing on MoveApps",
       "Authors@R": "person(\"Clemens\", \"Hahn\", , \"clemens@couchbits.com\", role = c(\"aut\", \"cre\"))",
@@ -1298,16 +1298,19 @@
       ],
       "Suggests": [
         "shiny",
-        "httr"
+        "httr",
+        "devtools",
+        "testthat (>= 3.0.0)"
       ],
+      "Config/testthat/edition": "3",
       "Roxygen": "list(markdown = TRUE)",
       "RoxygenNote": "7.3.3",
       "RemoteType": "github",
       "RemoteHost": "api.github.com",
       "RemoteRepo": "moveapps-sdk-r-package",
       "RemoteUsername": "movestore",
-      "RemoteRef": "v0.2.0",
-      "RemoteSha": "87a60633cbd5c953481f9dc30d105f738a822e06",
+      "RemoteRef": "HEAD",
+      "RemoteSha": "66a27c25fe5aa3c96087d50e61afe857ada97fd7",
       "NeedsCompilation": "no",
       "Author": "Clemens Hahn [aut, cre]",
       "Maintainer": "Clemens Hahn <clemens@couchbits.com>"

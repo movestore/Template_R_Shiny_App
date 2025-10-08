@@ -1,64 +1,96 @@
-# Changelog SDK
+# Changelog
 
-## 2025-10 `v4.0.0`
+All notable changes to this project will be documented in this file.
 
-- extract MoveApps SDK scripts to R package [moveapps](https://github.com/movestore/moveapps-sdk-r-package) while keeping backward compatibility to v3
-- bump R to `v4.5.1` (`renv.lock` + `Dockerfile`)
-- support R source scripts from the `./src/app/` directory (must be sourced by the App Developer on their own)
+The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
+and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## 2025-08 `v3.3.0`
+## [4.0.0] - 2025-10
 
-- extract app settings as a JSON file (bookmark.json)
+### Added
+- Support for R source scripts from the `./src/app/` directory (must be sourced by the App Developer on their own)
 
-## 2024-03 `v3.2.0`
+### Changed
+- Extracted MoveApps SDK scripts to R package [moveapps](https://github.com/movestore/moveapps-sdk-r-package) while keeping backward compatibility to v3
+- Upgraded R to version 4.5.1 (`renv.lock` + `Dockerfile`)
 
-- introduce app-setting-type `USER_FILE`
-- deprecate app-setting-type `LOCAL_FILE`
+### Removed
+- App setting type `LOCAL_FILE` and its associated function `getAppFilePath()`
 
-## 2024-02 `v3.1.0`
+## [3.3.0] - 2025-08
 
-- introduce `appspec.json` version `1.2`
-    - removed `createsArtifacts`. It is safe to remove it completely from your `appspec.json` - MoveApps tries now to fetch artifacts for every running App.
-    - verify to include the `null` option for setting types `DROPDOWN` and `RADIOBUTTONS` if `defaultValue` is set to `null`.
-- drop `move1` dependency
+### Added
+- Extract app settings as a JSON file (bookmark.json)
 
-## 2023-12 `v3.0.5`
+## [3.2.0] - 2024-03
 
-- update of input files for testing apps. Files now include `move2_loc` and `telemetry.list` I/O types, and projected and not projected data. All details included in the README.txt in the data/raw folder.
+### Added
+- Introduce app-setting-type `USER_FILE`
 
-## 2023-11 `v3.0.4`
+### Deprecated
+- App-setting-type `LOCAL_FILE`
 
-- Upgrade `R` framework to `4.3.2`
+## [3.1.0] - 2024-02
 
-## 2023-10 `v3.0.3`
+### Added
+- Introduce `appspec.json` version `1.2`
+    - Verify to include the `null` option for setting types `DROPDOWN` and `RADIOBUTTONS` if `defaultValue` is set to `null`
 
-- bugfix result/output observation (`'data' must be 2-dimensional`)
+### Changed
+- MoveApps now tries to fetch artifacts for every running App
 
-## 2023-09 `v3.0.2`
+### Removed
+- `createsArtifacts` from `appspec.json` (v1.2). It is safe to remove it completely from your `appspec.json`.
+- `move1` dependency
 
-- introduce `appspec.json` version `1.1`
-    - documentation link is not required any more
+## [3.0.5] - 2023-12
 
-## 2023-08 `v3.0.1`
+### Changed
+- Updated input files for testing apps. Files now include `move2_loc` and `telemetry.list` I/O types, and projected and non-projected data. All details included in the README.txt in the data/raw folder
 
-- removed MoveApps IO-Type dependency
-- provide new `move2` input files
-- bugfix app-file loading
+## [3.0.4] - 2023-11
 
-## 2023-06 `v3.0.0`
+### Changed
+- Upgraded `R` framework to `4.3.2`
 
-- introduces template versioning (starting w/ `v3.0.0` as this is the third major iteration)
-- introduces `dotenv` to control/adjust local app-development
-- updates developer readme
-- clear app output of previously app run at each start of the SDK
-- introduces a _Template Synchronization_ GH action. Use it to synchronize your forked app with template updates. If you already forked from the template _before_ SDK `v3.0.0` you can (*only use this option if your app is written for input data of class `move2`*): 
-    1. manually add the files `.github/workflows/template-sync.yml` and `.github/.templatesyncignore` to your fork. 
-    1. with these files you can manually execute the GH action named _.github/workflows/template-sync.yml_. 
-    1. after merging the generated pull request add the file `app-configuration.json` manually to the root directory of your App.
+## [3.0.3] - 2023-10
 
-- fix app-configuration for execution on moveapps.org
-- clear app output of previously app run at each start of the SDK
+### Fixed
+- Result/output observation (`'data' must be 2-dimensional`)
 
-- SDK supports [`move2`](https://gitlab.com/bartk/move2/), if input is of class [`move`](https://gitlab.com/bartk/move/) it will be converted into class `move2`.
-- output is always move2
-- Upgrade `R` framework to `4.3.1`
+## [3.0.2] - 2023-09
+
+### Added
+- Introduce `appspec.json` version `1.1`
+    - Documentation link is not required anymore
+
+## [3.0.1] - 2023-08
+
+### Added
+- Provide new `move2` input files
+
+### Changed
+- Removed MoveApps IO-Type dependency
+
+### Fixed
+- App-file loading
+
+## [3.0.0] - 2023-06
+
+### Added
+- Template versioning (starting with `v3.0.0` as this is the third major iteration)
+- `dotenv` to control/adjust local app development
+- Template Synchronization GitHub action to synchronize your forked app with template updates
+    - If you already forked from the template before SDK `v3.0.0` you can (*only use this option if your app is written for input data of class `move2`*):
+        1. Manually add the files `.github/workflows/template-sync.yml` and `.github/.templatesyncignore` to your fork
+        2. With these files you can manually execute the GitHub action named `.github/workflows/template-sync.yml`
+        3. After merging the generated pull request add the file `app-configuration.json` manually to the root directory of your App
+- SDK supports [`move2`](https://gitlab.com/bartk/move2/)
+    - If input is of class [`move`](https://gitlab.com/bartk/move/) it will be converted into class `move2`
+    - Output is always `move2`
+
+### Changed
+- Updated developer readme
+- Upgraded `R` framework to `4.3.1`
+- Clear app output of previously app run at each start of the SDK
+- Fixed app configuration for execution on moveapps.org
