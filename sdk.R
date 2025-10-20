@@ -1,16 +1,21 @@
-library(dotenv)
 # You can control your local app development via environment variables.
-# You can define things like input-data, output-data etc.
+# You can define things like input-data, app-configuration etc.
 # Per default your environment is defined in `/.env`
-load_dot_env()
+dotenv::load_dot_env()
 
-# provide common stuff
-source("src/common/logger.R")
-source("src/common/runtime_configuration.R")
-clearRecentOutput()
+# This loads and installs the MoveApps R SDK
+remotes::install_github("movestore/moveapps-sdk-r-package")
+moveapps::logger.init()
+moveapps::clearRecentOutput()
 
 # Lets simulate running your app on MoveApps
-source("src/moveapps.R")
+library("moveapps")
+Sys.setenv(tz="UTC")
+Sys.setenv(HTTP_CLIENT_FAKE="yes")
+# `./ShinyModule.R` is the home of your app code
+# It is the only file which will be bundled into the final app on MoveApps
+source("ShinyModule.R")
+
 options(shiny.host = "0.0.0.0")
 options(shiny.port = 3838)
-shinyApp(ui, server, enableBookmarking = "server")
+shinyApp(moveapps::createMoveAppsShinyUI, moveapps::createMoveAppsShinyServer, enableBookmarking = "server")

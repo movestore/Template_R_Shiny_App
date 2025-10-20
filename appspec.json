@@ -14,10 +14,10 @@
         "name": "shiny"
       },
       {
-        "name": "move2"
+        "name": "sf"
       },
       {
-        "name": "sf"
+       "remotes": "install_git('https://gitlab.com/bartk/move2.git')"
       }
     ]
   },
