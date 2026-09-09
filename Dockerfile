@@ -2,10 +2,17 @@
 # MoveApps R-SHINY SDK
 ########################################################################################################################
 
-FROM rocker/geospatial:4.5.1
+FROM rocker/geospatial:4.6.1
 
 LABEL org.opencontainers.image.authors="us@couchbits.com"
 LABEL org.opencontainers.image.vendor="couchbits GmbH"
+
+RUN apt-get update && apt-get install -y --no-install-recommends \
+# rocker dropped cmake from `geospatial` in 4.5.3. Packages that build a vendored C++ dependency
+# need it -- e.g. s2 builds Abseil with it, and without s2 neither sf nor move2 install.
+    cmake \
+# clean-up
+    && apt-get clean
 
 # Security Aspects
 # Create a non-root user
