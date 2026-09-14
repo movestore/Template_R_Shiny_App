@@ -5,6 +5,17 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [4.0.1] - 2026-09
+
+### Added
+- `cmake` to the `Dockerfile`: `rocker/geospatial` dropped it with R `4.5.3`, and without it `s2` — and therefore `sf` and `move2` — cannot be built
+
+### Changed
+- Upgraded `R` to version `4.6.1` (`renv.lock` + `Dockerfile`)
+    - Your fork keeps its own `renv.lock` and `renv/` — both are listed in `.github/.templatesyncignore` and are not synced. After taking this update, `renv` reports an R version mismatch against the new base image. To follow along, run `renv::restore()` inside a container built from the new `Dockerfile` and commit the regenerated `renv.lock`. If your App uses neither Docker nor `renv`, nothing changes for you.
+- Upgraded the [`moveapps`](https://github.com/movestore/moveapps-sdk-r-package) SDK package to `v1.0.3`
+- Upgraded `renv` to `1.2.4`
+
 ## [4.0.0] - 2025-10
 
 ### Added
