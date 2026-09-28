@@ -3,7 +3,7 @@ Set of input data to test apps.
 *Content*
 - input1: 1 goat, median fix rate = 30mins, tracking duration 7.5 month, gps, local movement
 - input2: 3 storks, median fix rate = 1sec, tracking duration 2 weeks, gps, local movement
-- input3: 1 stork, median fix rate = 1h | 1day | 1 week, tracking duration 11.5 years, argos, includes migration
+- input3: 1 stork, one track per deployment, median fix rate = 1h | 1day | 1 week, tracking duration 11.5 years, argos, includes migration
 - input4: 3 geese, median fix rate = 1h | 4h, tracking duration 1.5 years, gps, includes migration
 
 *I/O types*
