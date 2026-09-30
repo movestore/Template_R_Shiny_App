@@ -1301,7 +1301,7 @@
     },
     "moveapps": {
       "Package": "moveapps",
-      "Version": "1.0.3",
+      "Version": "1.1.0",
       "Source": "GitHub",
       "Title": "SDK for App Developing on MoveApps",
       "Authors@R": "person(\"Clemens\", \"Hahn\", , \"clemens@couchbits.com\", role = c(\"aut\", \"cre\"))",
@@ -1316,7 +1316,10 @@
         "shiny",
         "httr",
         "devtools",
-        "testthat (>= 3.0.0)"
+        "testthat (>= 3.1.7)",
+        "shinytest2",
+        "chromote",
+        "withr"
       ],
       "Config/testthat/edition": "3",
       "Roxygen": "list(markdown = TRUE)",
@@ -1327,8 +1330,8 @@
       "RemoteHost": "api.github.com",
       "RemoteUsername": "movestore",
       "RemoteRepo": "moveapps-sdk-r-package",
-      "RemoteRef": "v1.0.3",
-      "RemoteSha": "ea8259a3bc69cdf9c98cf991e59818f5ad41226f"
+      "RemoteRef": "v1.1.0",
+      "RemoteSha": "100ff72d8452bff595e088f4829f241e41995f3b"
     },
     "otel": {
       "Package": "otel",
