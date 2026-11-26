@@ -5,6 +5,7 @@ Set of input data to test apps.
 - input2: 3 storks, median fix rate = 1sec, tracking duration 2 weeks, gps, local movement
 - input3: 1 stork, one track per deployment, median fix rate = 1h | 1day | 1 week, tracking duration 11.5 years, argos, includes migration
 - input4: 3 geese, median fix rate = 1h | 4h, tracking duration 1.5 years, gps, includes migration
+- input5: 50 storks, median fix rate = 1sec, tracking duration 5 days, gps, includes migration
 
 *I/O types*
 - all data sets are provided as 'move2_loc'
@@ -29,6 +30,7 @@ input3_move2loc_Mollweide.rds
 input4_move2loc_LatLon.rds
 input4_move2loc_Mollweide.rds
 
+input5_move2loc_LatLon.rds
 
 input1_telemetrylist_aeqd.rds
 input2_telemetrylist_aeqd.rds
